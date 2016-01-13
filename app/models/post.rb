@@ -5,4 +5,15 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :post_tags
 
   validates_presence_of :name, :content
+
+  accepts_nested_attributes_for :tags
+
+  # def tags
+  #   []
+  # end
+
+  # def tags_attributes=(attributes)
+  #   # Process the attributes hash
+  # end
+
 end
